@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import './Home.scss';
-import { Row, Jumbotron, Container } from 'reactstrap';
+import { Jumbotron, Container } from 'reactstrap';
 
 export default function Home(): ReactElement {
     return (

@@ -107,7 +107,7 @@ class Menu extends React.Component {
                             </NavItem>
                             <UncontrolledDropdown nav>
                                 <DropdownToggle nav>
-                                    <i className="ni ni-collection d-lg-none mr-1" />
+                                    <i className="fa fa-angle-down mr-1" />
                                     <span className="nav-link-inner--text">Hjælp</span>
                                 </DropdownToggle>
                                 <DropdownMenu>
