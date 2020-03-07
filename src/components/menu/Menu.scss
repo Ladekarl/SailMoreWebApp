@@ -1,0 +1,24 @@
+#navbar-main {
+  box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+  padding: 0 1rem;
+
+  .nav-item {
+    border-bottom-style: solid;
+    border-bottom-color: #fff;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-bottom-width: 2px;
+  }
+
+  .nav-item:active {
+    border-bottom-color: #808080;
+  }
+
+  .nav-item:hover {
+    border-bottom-color: #808080;
+  }
+
+  .nav-item {
+    padding: 0.8rem 0;
+  }
+}

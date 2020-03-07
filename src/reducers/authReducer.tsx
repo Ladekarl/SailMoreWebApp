@@ -1,7 +1,7 @@
 import {
     LOGIN,
     REGISTER
-} from './authActions';
+} from '../actions/authActions';
 import { Action } from 'redux';
 
 interface AuthState {
