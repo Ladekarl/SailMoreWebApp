@@ -30,6 +30,7 @@ import Routes from "../../routes/Routes";
 import './Menu.scss';
 
 class Menu extends React.Component {
+
     state = {
         collapseClasses: "",
         collapseOpen: false
@@ -53,8 +54,7 @@ class Menu extends React.Component {
                 <Navbar
                     className="navbar-main navbar-light"
                     expand="lg"
-                    id="navbar-main"
-                >
+                    id="navbar-main">
                     <NavbarBrand className="mr-lg-5" to={Routes.FORSIDE} tag={Link}>
                         <img
                             alt="..."
@@ -115,15 +115,8 @@ class Menu extends React.Component {
                                         Værd at Vide</DropdownItem>
                                     <DropdownItem to={Routes.ØKONOMI} tag={Link}>
                                         Økonomi og Booking</DropdownItem>
-                                    <DropdownItem to={Routes.PRIVATLIVSPOLITIK} tag={Link}>
-                                        Privatlivspolitik</DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
-                            <NavItem>
-                                <NavLink to={Routes.OM_OS} tag={Link}>
-                                    <span className="nav-link-inner--text">Om Os</span>
-                                </NavLink>
-                            </NavItem>
                             <NavItem>
                                 <NavLink to={Routes.LOGIN} tag={Link}>
                                     <span className="nav-link-inner--text">Login</span>
