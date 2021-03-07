@@ -1,42 +1,22 @@
 import React, { Component } from "react";
-
-// reactstrap components
-import {
-    Button,
-    Card,
-    CardHeader,
-    CardBody,
-    FormGroup,
-    Form,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
-    Container,
-    Row,
-    Col
-} from "reactstrap";
 import Routes from "../../../routes/Routes";
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 import "firebase/auth";
 
 type RegisterState = {
-    name: string,
-    email: string,
-    password: string,
-    acceptedPolicy: boolean
-}
+  name: string;
+  email: string;
+  password: string;
+  acceptedPolicy: boolean;
+};
 
 class Register extends Component<{}, RegisterState> {
+  login = () => {};
 
-    login = () => {
-
-    }
-
-    render() {
-        return (
-            <section className="section section-shaped">
-                <Container className="lg-7">
+  render() {
+    return (
+      <section className="section section-shaped">
+        {/* <Container className="lg-7">
                     <Row className="justify-content-center">
                         <Col lg="5">
                             <Card className="bg-secondary shadow border-0">
@@ -135,10 +115,10 @@ class Register extends Component<{}, RegisterState> {
                             </Card>
                         </Col>
                     </Row>
-                </Container>
-            </section>
-        );
-    }
+                </Container> */}
+      </section>
+    );
+  }
 }
 
 export default Register;
