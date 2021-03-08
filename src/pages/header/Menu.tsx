@@ -5,22 +5,21 @@ import { useState } from "react";
 import NavItem from "../../components/header/NavItem";
 import DropDownItem from "../../components/header/DropDownItem";
 import MobileNavItem from "../../components/header/MobileNavItem";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 import MobileDropDownItem from "../../components/header/MobileDropDownItem";
 
-
 type Route = {
-  to: string,
-  title: string
-}
+  to: string;
+  title: string;
+};
 
 const HeaderRoutes: Route[] = [
-  { title: "Alle Sejltogter", to: Routes.ALLE_SEJLTOGTER, },
-  { title: "Opret Gasteprofil", to: Routes.OPRET_GASTEPROFIL, },
-  { title: "Opret Skipperprofil", to: Routes.OPRET_SKIPPERPROFIL, },
-  { title: "Værd at Vide", to: Routes.VÆRD_AT_VIDE, },
-  { title: "Økonomi", to: Routes.ØKONOMI, },
-  { title: "Login", to: Routes.LOGIN, },
+  { title: "Alle Sejltogter", to: Routes.ALLE_SEJLTOGTER },
+  { title: "Opret Gasteprofil", to: Routes.OPRET_GASTEPROFIL },
+  { title: "Opret Skipperprofil", to: Routes.OPRET_SKIPPERPROFIL },
+  { title: "Værd at Vide", to: Routes.VÆRD_AT_VIDE },
+  { title: "Økonomi", to: Routes.ØKONOMI },
+  { title: "Login", to: Routes.LOGIN },
 ];
 
 const DropdownRoutes: Route[] = [
@@ -28,7 +27,6 @@ const DropdownRoutes: Route[] = [
   { title: "Settings", to: "/" },
   { title: "Sign out", to: "/" },
 ];
-
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +51,15 @@ function Menu() {
                 </a>
                 <div className="hidden md:block h-full">
                   <div className="ml-10 flex items-center xl:flex h-full">
-                    {HeaderRoutes.map(route => <NavItem to={route.to} active={location.pathname === route.to}>{route.title}</NavItem>)}
+                    {HeaderRoutes.map((route, i) => (
+                      <NavItem
+                        key={i}
+                        to={route.to}
+                        active={location.pathname === route.to}
+                      >
+                        {route.title}
+                      </NavItem>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -69,8 +75,18 @@ function Menu() {
                         aria-haspopup="true"
                         onClick={() => setIsOpen(!isOpen)}
                       >
-                        <svg className="h-10 w-10 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" opacity="0.7">
-                          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                        <svg
+                          className="h-10 w-10 rounded-full"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="black"
+                          opacity="0.7"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </button>
                     </div>
@@ -89,7 +105,11 @@ function Menu() {
                         aria-orientation="vertical"
                         aria-labelledby="user-menu"
                       >
-                        {DropdownRoutes.map(route => <DropDownItem to={route.to}>{route.title}</DropDownItem>)}
+                        {DropdownRoutes.map((route, i) => (
+                          <DropDownItem key={i} to={route.to}>
+                            {route.title}
+                          </DropDownItem>
+                        ))}
                       </div>
                     </Transition>
                   </div>
@@ -113,9 +133,9 @@ function Menu() {
                     aria-hidden="true"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
@@ -128,9 +148,9 @@ function Menu() {
                     aria-hidden="true"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
@@ -141,11 +161,23 @@ function Menu() {
           <Transition show={isOpen}>
             <div className="md:hidden" id="mobile-menu">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {HeaderRoutes.map(route => <MobileNavItem to={route.to} active={location.pathname === route.to}>{route.title}</MobileNavItem>)}
+                {HeaderRoutes.map((route, i) => (
+                  <MobileNavItem
+                    key={i}
+                    to={route.to}
+                    active={location.pathname === route.to}
+                  >
+                    {route.title}
+                  </MobileNavItem>
+                ))}
               </div>
               <div className="pb-3 border-t border-gray-700">
                 <div className="mt-3 px-2 space-y-1">
-                  {DropdownRoutes.map(route => <MobileDropDownItem to={route.to}>{route.title}</MobileDropDownItem>)}
+                  {DropdownRoutes.map((route, i) => (
+                    <MobileDropDownItem key={i} to={route.to}>
+                      {route.title}
+                    </MobileDropDownItem>
+                  ))}
                 </div>
               </div>
             </div>

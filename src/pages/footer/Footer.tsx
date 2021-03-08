@@ -3,12 +3,12 @@ import FooterNavItem from "../../components/Footer/FooterNavItem";
 import Routes from "../../routes/Routes";
 
 type Route = {
-  to: string,
-  title: string
-}
+  to: string;
+  title: string;
+};
 const FooterRoutes: Route[] = [
   { title: "Om Os", to: Routes.OM_OS },
-  { title: "Privatlivspolitik", to: Routes.PRIVATLIVSPOLITIK }
+  { title: "Privatlivspolitik", to: Routes.PRIVATLIVSPOLITIK },
 ];
 
 class Footer extends React.Component {
@@ -19,7 +19,11 @@ class Footer extends React.Component {
           <div className="w-full">
             <div className="mx-auto container border-t border-gray-200">
               <div className="flex justify-center pb-7 pt-7 container w-full">
-                {FooterRoutes.map(route => <FooterNavItem to={route.to}>{route.title}</FooterNavItem>)}
+                {FooterRoutes.map((route, i) => (
+                  <FooterNavItem key={i} to={route.to}>
+                    {route.title}
+                  </FooterNavItem>
+                ))}
               </div>
               <div className="flex justify-center container">
                 <div className="copyright text-gray-400 font-normal">
