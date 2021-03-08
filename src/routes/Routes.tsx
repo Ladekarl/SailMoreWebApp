@@ -6,6 +6,6 @@ export default {
     OM_OS: '/om-os',
     VÆRD_AT_VIDE: '/værd-at-vide',
     ØKONOMI: '/økonomi',
+    LOGIN: '/login',
     PRIVATLIVSPOLITIK: '/privatlivspolitik',
-    LOGIN: '/login'
-}
+};
