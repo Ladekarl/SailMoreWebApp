@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface FooterNavItemProps {
     to: string,
@@ -8,9 +9,11 @@ interface FooterNavItemProps {
 export default (props: FooterNavItemProps) => {
     return (
         <>
-            <a className="mx-5 text-gray-500 font-medium" href={props.to}>
+            <Link
+                className="mx-5 text-gray-300 font-bold"
+                to={props.to}>
                 {props.children}
-            </a>
+            </Link>
         </>
     )
 }

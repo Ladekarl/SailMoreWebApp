@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Background from "../../../components/Background";
 
 type LoginState = {};
 
@@ -9,7 +8,6 @@ class Login extends Component<{}, LoginState> {
 
     return (
       <section className="section section-shaped">
-        <Background background={background} height="45%" />
         {/* <Container className="lg-7">
           <Row className="justify-content-center">
             <Col lg="5">

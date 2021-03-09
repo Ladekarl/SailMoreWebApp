@@ -163,6 +163,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      nunito: ['nunito', 'sans-serif'],
       sans: [
         'ui-sans-serif',
         'system-ui',

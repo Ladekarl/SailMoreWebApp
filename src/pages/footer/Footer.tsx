@@ -1,5 +1,5 @@
 import React from "react";
-import FooterNavItem from "../../components/Footer/FooterNavItem";
+import FooterNavItem from "../../components/footer/FooterNavItem";
 import Routes from "../../routes/Routes";
 
 type Route = {
@@ -8,6 +8,8 @@ type Route = {
 };
 const FooterRoutes: Route[] = [
   { title: "Om Os", to: Routes.OM_OS },
+  { title: "Værd at Vide", to: Routes.VÆRD_AT_VIDE },
+  { title: "Økonomi", to: Routes.ØKONOMI },
   { title: "Privatlivspolitik", to: Routes.PRIVATLIVSPOLITIK },
 ];
 
@@ -15,7 +17,7 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-        <footer className="bg-white mt-5">
+        <footer className="py-5 w-full">
           <div className="w-full">
             <div className="mx-auto container border-t border-gray-200">
               <div className="flex justify-center pb-7 pt-7 container w-full">
@@ -26,7 +28,7 @@ class Footer extends React.Component {
                 ))}
               </div>
               <div className="flex justify-center container">
-                <div className="copyright text-gray-400 font-normal">
+                <div className="text-gray-400 font-light">
                   © {new Date().getFullYear()} SailMore. All Rights Reserved.
                 </div>
               </div>

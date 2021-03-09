@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface DropdownItemProps {
     to: string,
@@ -8,13 +9,13 @@ interface DropdownItemProps {
 export default (props: DropdownItemProps) => {
     return (
         <>
-            <a
-                href={props.to}
-                className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"   
+            <Link
+                to={props.to}
+                className="block px-4 py-2 text-md text-gray-600 hover:bg-gray-100 font-light"
                 role="menuitem"
             >
                 {props.children}
-            </a>
+            </Link>
         </>
     )
 }
